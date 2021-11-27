@@ -4,6 +4,31 @@ let player2;
 let winningConditions;
 let currentPlayer;
 
+document.querySelector('#start-btn').addEventListener('click', () => {
+    startGame()
+})
+
+const changeTurn = () => {
+    if (currentPlayer === player1){
+        currentPlayer = player2;
+    }
+    else {
+        currentPlayer = player1;
+    }
+}
+
+const checkForWin = () => {
+    const endGame = arr => arr.every(value => value === arr[0]);
+    winningConditions.forEach(elem => {
+        if (endGame(elem) && !elem.includes('')){
+            document.querySelector('footer').textContent = `${elem[0]} WINS!`
+            window.addEventListener('click', function(event) {
+                event.stopImmediatePropagation();
+            }, true);
+        }
+    })
+}
+
 const startGame = () => {
     player1 = prompt("Player 1: Enter your Symbol...");
     player2 = prompt("Player 2: Enter your Symbol...");
@@ -19,29 +44,9 @@ const startGame = () => {
         ['','',''], ['','','']
     ]
     currentPlayer = player1
-}
-
-document.querySelector('#start-btn').addEventListener('click', () => {
-    startGame()
-})
-
-const changeTurn = () => {
-    if (currentPlayer === player1){
-        currentPlayer = player2;
-    }
-    else {
-        currentPlayer = player1;
-    }
-}
-
-const checkForWin = () => {
-    // DO STUFF
-}
 
 
-
-
-// BOX 0
+    // BOX 0
 document.querySelector("#row1-col1").addEventListener('click', () => {
     document.querySelector("#row1-col1").textContent = currentPlayer;
     winningConditions[0][0] = currentPlayer;
@@ -129,3 +134,12 @@ document.querySelector("#row3-col3").addEventListener('click', () => {
     checkForWin();
     changeTurn();
 }, {once: true});
+
+}
+
+
+
+
+
+
+
