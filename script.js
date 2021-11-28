@@ -29,26 +29,30 @@ const changeTurn = () => {
     }
 }
 
+const replayOption = () => {
+    document.querySelector('#p1').style.display = 'none';
+    document.querySelector('#p2').style.display = 'none';
+    let replay = document.createElement('button');
+    document.querySelector('#menu').appendChild(replay);
+    replay.textContent = 'REPLAY';
+    replay.id = 'replay-btn';
+    // Resets Game
+    document.querySelector('#replay-btn').addEventListener('click', () => {
+    window.location.reload();
+    });
+}
+
 // Checks for valid win / draw condition to declare the end of a game.
 const checkForWin = () => {
     const endGame = arr => arr.every(value => value === arr[0]);
-    let findDraw = 0
+    let findDraw = 0;
     winningConditions.forEach(elem => {
         if (endGame(elem) && !elem.includes('')){
             document.querySelector('footer h1').textContent = `${elem[0]} WINS!`
             document.querySelector('main').addEventListener('click', function(event) {
                 event.stopImmediatePropagation();
             }, true);
-            document.querySelector('#p1').style.display = 'none';
-            document.querySelector('#p2').style.display = 'none';
-            let replay = document.createElement('button');
-            document.querySelector('#menu').appendChild(replay);
-            replay.textContent = 'REPLAY';
-            replay.id = 'replay-btn';
-            // Resets Game
-            document.querySelector('#replay-btn').addEventListener('click', () => {
-                window.location.reload();
-            })
+            replayOption();
         }
     })
     for (let i = 0; i < winningConditions.length; i++) {
@@ -58,6 +62,7 @@ const checkForWin = () => {
     }
     if (findDraw === 8) {
         document.querySelector('footer h1').textContent = 'DRAW!'
+        replayOption();
     }
 }
 
@@ -97,8 +102,6 @@ const startGame = () => {
     ]
     currentPlayer = player1
     
-
-
     // BOX 0
     document.querySelector("#row1-col1").addEventListener('click', () => {
         document.querySelector("#row1-col1").textContent = currentPlayer;
