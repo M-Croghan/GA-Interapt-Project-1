@@ -134,7 +134,6 @@ const startGame = () => {
         document.querySelector("#row2-col1").textContent = currentPlayer;
         winningConditions[1][0] = currentPlayer;
         winningConditions[3][1] = currentPlayer;
-        winningConditions[5][0] = currentPlayer;
         checkForWin();
         changeTurn();
     }, {once: true});
