@@ -15,13 +15,14 @@ header {
 
 footer {
     text-align: center;
+    margin: 0;
 }
 
 #menu {
     border: 5px solid blue;
     grid-column: 1;
     grid-row: 2;
-    text-align: center;
+    display: grid;
     
 }
 
@@ -33,7 +34,7 @@ footer {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: orange;
+    background-color: black;
 
 }
 
@@ -43,12 +44,33 @@ footer {
     grid-row: 3;
 }
 
-#row1-col1{
-    background-color: orangered;
-}
+
 .box {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    border: 2px dashed black;
+    border: 2px solid #fff;
     height: 128px;
+    font-size: 50px;
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
+    -moz-animation: glowing-text 1s ease-in-out infinite alternate;
+    animation: glowing-text 1s ease-in-out infinite alternate;
+  }
+  @-webkit-keyframes glowing-text {
+    0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2e00e6, 0 0 40px #6300e6, 0 0 50px #c300e6, 0 0 60px #e200e6, 0 0 70px #e600ca;
+  }
+    
+    100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+
+#foot {
+    color: brown;
+    font-size: 100px;
+    margin: 0;
 }
