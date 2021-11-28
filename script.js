@@ -1,7 +1,12 @@
+// Set up main variables
 let player1;
 let player2;
 let winningConditions;
 let currentPlayer;
+
+// Hide HTML elements
+document.querySelector('#p1').style.display = 'none';
+document.querySelector('#p2').style.display = 'none';
 
 // Triggers Start of Game
 document.querySelector('#start-btn').addEventListener('click', () => {
@@ -10,18 +15,17 @@ document.querySelector('#start-btn').addEventListener('click', () => {
 })
 
 
-
 // Changes current player turn. Called after a player makes a choice.
 const changeTurn = () => {
     if (currentPlayer === player1){
         currentPlayer = player2;
-        document.querySelector('#p1').style.background = 'white';
-        document.querySelector('#p2').style.background = 'yellow';
+        document.querySelector('#p1').className= 'waitingTurn'
+        document.querySelector('#p2').className = 'isTurn';
     }
     else {
         currentPlayer = player1;
-        document.querySelector('#p2').style.background = 'white';
-        document.querySelector('#p1').style.background = 'yellow';
+        document.querySelector('#p2').className = 'waitingTurn';
+        document.querySelector('#p1').className = 'isTurn';
     }
 }
 
@@ -70,11 +74,15 @@ const startGame = () => {
         player2 = prompt("Please enter a SINGLE character for Player 2: ").toUpperCase();
     }
 
+    document.querySelector('#p1').style.display = 'block';
+    document.querySelector('#p2').style.display = 'block';
+
     let p1Label = document.querySelector('#p1');
     p1Label.textContent = `PLAYER 1: ${player1}`;
-    p1Label.style.background = 'yellow';
+    p1Label.className = 'isTurn';
     let p2Label = document.querySelector('#p2');
     p2Label.textContent = `PLAYER 2: ${player2}`; 
+    p2Label.className = 'waitingTurn';
 
     winningConditions = [
         /* [0][1][2]

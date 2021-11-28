@@ -1,33 +1,27 @@
 body {
     margin: 0;
-    border: 5px solid red;
+    border: 5px solid rgb(62, 4, 73);
+    background: black;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr 3fr 1fr;
 }
 
 header {
-    border: 5px solid green;
+    color: #fff;
+    background: black;
     grid-column: 1 / span 3;
     grid-row: 1;
     text-align: center;
 }
 
-footer {
-    text-align: center;
-    margin: 0;
-}
-
 #menu {
-    border: 5px solid blue;
     grid-column: 1;
     grid-row: 2;
     display: grid;
-    
 }
 
 #game-window {
-    border: 5px solid yellow;
     grid-column: 2 / span 3;
     grid-row: 2;
     margin: 10px;
@@ -39,9 +33,10 @@ footer {
 }
 
 footer {
-    border: 5px solid orange;
     grid-column: 1 / span 3;
     grid-row: 3;
+    text-align: center;
+    margin: 0;
 }
 
 
@@ -69,8 +64,57 @@ footer {
   }
 
 
-#foot {
-    color: brown;
-    font-size: 100px;
-    margin: 0;
+#foot, h1 {
+    color: #fff;
+    padding-top: 20px;
+    font-size: 45px;
+    -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
+    -moz-animation: glowing-text 1s ease-in-out infinite alternate;
+    animation: glowing-text 1s ease-in-out infinite alternate;
+  }
+  @-webkit-keyframes glowing-text {
+    0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2e00e6, 0 0 40px #6300e6, 0 0 50px #c300e6, 0 0 60px #e200e6, 0 0 70px #e600ca;
+  }
+    
+    100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+
+button {
+    background-color: rgb(62, 4, 73);
+    color: white;
+    -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
+    -moz-animation: glowing-text 1s ease-in-out infinite alternate;
+    animation: glowing-text 1s ease-in-out infinite alternate;
+  }
+  @-webkit-keyframes glowing-text {
+    0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2e00e6, 0 0 40px #6300e6, 0 0 50px #c300e6, 0 0 60px #e200e6, 0 0 70px #e600ca;
+  }
+    
+    100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+.isTurn {
+padding-top: 25%;
+margin: 5px;
+color:white;
+background-color:green;
+box-shadow: 0px 0px 7px 3px yellow;
+text-align: center;
+font-size: 40px;
+}
+
+.waitingTurn {
+margin: 5px;
+padding-top: 25%;
+text-align: center;
+font-size: 40px;
+box-shadow: 0 1 2 0;
+background-color: grey;
 }
