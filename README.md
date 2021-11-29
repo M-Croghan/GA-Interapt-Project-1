@@ -5,11 +5,12 @@ via a web browser.
 ![Game UI](/img/finalUI.png "Finished Main Game Window")
 
 # Table of Contents
-1. [Development Approach](#https://github.com/M-Croghan/GA-Interapt-Project-1#mag_right-development-approach-mag)
-2. [Technologies Used](##TECHNOLOGIES)
-3. [Benchmarks & User Stories](##BENCHMARKS)
-4. [Issues & Solutions](##ISSUES)
-5. [Game Instructions](##:video_game:GAMEINSTRUCTIONS:video_game:)
+1. [Development Approach](https://github.com/M-Croghan/GA-Interapt-Project-1#mag_right-development-approach-mag)
+2. [Technologies Used](https://github.com/M-Croghan/GA-Interapt-Project-1#desktop_computer-technologies-used-computer)
+3. [Benchmarks & User Stories](https://github.com/M-Croghan/GA-Interapt-Project-1#clipboard-benchmarks--user-stories-scroll)
+4. [Issues & Solutions](https://github.com/M-Croghan/GA-Interapt-Project-1#warning-issues--solutions-bulb)
+5. [Game Instructions](https://github.com/M-Croghan/GA-Interapt-Project-1#video_game-game-installation--instructions-video_game)
+6. [Credits / Sources](https://github.com/M-Croghan/GA-Interapt-Project-1#credits--sources)
 
 ## :mag_right: DEVELOPMENT APPROACH :mag:
 The approach taken with this project involved short development cycles comprised of 5 phases.
