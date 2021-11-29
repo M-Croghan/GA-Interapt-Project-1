@@ -123,3 +123,8 @@ Allows a user to play online with another person OR against a computer:
 6. If neither player meets the winning criteria and no boxes are left to play. The game is a draw.
 7. At the conclusion of a game (win or draw), the 'Replay' button replaces the player turns boxes.
     - Pressing the 'Replay' button will clear the board and prepare a new game to be started.
+
+## CREDITS / SOURCES
+The main background-image used in the game was sourced at:  
+https://www.vecteezy.com/vector-art/366560-retro-background
+_Artist / Provider:_ Rambleron
