@@ -5,7 +5,7 @@ via a web browser.
 ![Game UI](/img/finalUI.png "Finished Main Game Window")
 
 # Table of Contents
-1. [Development Approach](##DEVELOPMENT)
+1. [Development Approach](https://github.com/M-Croghan/GA-Interapt-Project-1#mag_right-development-approach-mag)
 2. [Technologies Used](##TECHNOLOGIES)
 3. [Benchmarks & User Stories](##BENCHMARKS)
 4. [Issues & Solutions](##ISSUES)
