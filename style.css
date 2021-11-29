@@ -1,19 +1,20 @@
 body {
     margin: 0;
-    border: 5px solid rgb(62, 4, 73);
-    background: black;
+    background-image: url("img/retro.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr 3fr;
 }
 
 header {
-    font-family: 'Genos', sans-serif;
-    color: #fff;
-    background: black;
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    text-align: center;
+  font-family: 'Genos', sans-serif;
+  color: #fff;
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  text-align: center;
 }
 
 #menu {
@@ -31,7 +32,7 @@ header {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: black;
-
+    opacity: 0.62;
 }
 
 footer {
@@ -71,7 +72,7 @@ footer {
 #foot, h1 {
     color: #fff;
     padding-top: 20px;
-    font-size: 45px;
+    font-size: 58px;
     -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
     -moz-animation: glowing-text 1s ease-in-out infinite alternate;
     animation: glowing-text 1s ease-in-out infinite alternate;
@@ -91,6 +92,8 @@ button {
     font-family: 'Genos', sans-serif;
     font-size: 100px;
     background-color: rgb(62, 4, 73);
+    
+    border: 5px solid white;
     color: white;
     -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
     -moz-animation: glowing-text 1s ease-in-out infinite alternate;
@@ -107,22 +110,28 @@ button {
 }
 
 .isTurn {
+font-family: 'Genos', sans-serif;
 padding-top: 25%;
 margin: 5px;
 color:white;
 background-color:green;
-box-shadow: 0px 0px 7px 3px yellow;
 text-align: center;
 font-size: 40px;
+-webkit-box-shadow: 5px 0px 15px 5px gold;
+-moz-box-shadow: 5px 0px 15px 5px gold;
+box-shadow: 5px 0px 15px 5px gold;
+border-radius: 5px;
 }
 
 .waitingTurn {
+font-family: 'Genos', sans-serif;
 margin: 5px;
 padding-top: 25%;
 text-align: center;
 font-size: 40px;
-box-shadow: 0 1 2 0;
+opacity: 0.25;
 background-color: grey;
+border-radius: 5px;
 }
 
 

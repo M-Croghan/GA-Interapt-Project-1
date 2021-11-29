@@ -3,22 +3,23 @@ let player1;
 let player2;
 let winningConditions;
 let currentPlayer;
+// Sounds to play for box selections, win, & draw
 let soundPlay = new Audio('sound/laser.mp3');
 let soundWin = new Audio('sound/macho.mp3');
 let soundDraw = new Audio('sound/draw.mp3');
 
-// Hide HTML elements
+// Hides player label elements until game starts
 document.querySelector('#p1').style.display = 'none';
 document.querySelector('#p2').style.display = 'none';
 
 // Triggers Start of Game
 document.querySelector('#start-btn').addEventListener('click', () => {
     startGame();
-    document.querySelector('#start-btn').remove();
+    document.querySelector('#start-btn').remove(); // Removes the 'start' button.
 })
 
 
-// Changes current player turn. Called after a player makes a choice.
+// Changes current player turn. Called after a player makes a box choice.
 const changeTurn = () => {
     if (currentPlayer === player1){
         currentPlayer = player2;
@@ -34,10 +35,10 @@ const changeTurn = () => {
 
 // Changes UI & offers replay button
 const replayOption = () => {
-    document.querySelector('#p1').style.display = 'none';
+    document.querySelector('#p1').style.display = 'none'; // Hides player labels
     document.querySelector('#p2').style.display = 'none';
-    let replay = document.createElement('button');
-    document.querySelector('#menu').appendChild(replay);
+    let replay = document.createElement('button'); // Creates replay button
+    document.querySelector('#menu').appendChild(replay); // Appends replay button to game menu
     replay.textContent = 'REPLAY';
     replay.id = 'replay-btn';
     // Resets Game
@@ -48,8 +49,11 @@ const replayOption = () => {
 
 // Checks for valid win / draw condition to declare the end of a game.
 const checkForWin = () => {
+    // Checks if every value in a row / column / diagnol is the same.
     const endGame = arr => arr.every(value => value === arr[0]);
+    // Creates a counter to determine is no win conditions exist (thus a draw).
     let findDraw = 0;
+    // Finds a win condition with all of the same player symbol & declares winner.
     winningConditions.forEach(elem => {
         if (endGame(elem) && !elem.includes('')){
             soundWin.play();
@@ -60,11 +64,13 @@ const checkForWin = () => {
             replayOption();
         }
     })
+    // Increments draw counter if a win condition contains different symbols.
     for (let i = 0; i < winningConditions.length; i++) {
         if (!endGame(winningConditions[i]) && !winningConditions[i].includes('') ) {
             findDraw++;
         }
     }
+    // If after checking all 8 win conditions, the counter will reflect 8. No winner = Draw.
     if (findDraw === 8) {
         soundDraw.play();
         document.querySelector('footer h1').textContent = 'DRAW!'
@@ -74,21 +80,22 @@ const checkForWin = () => {
 
 // Game initialization - Validates player symbol inputs & makes game board interactive.
 const startGame = () => {
-    
+    // Retrieves player symbol choices and converts to upper case characters.
     player1 = prompt("Player 1: Enter your Symbol...").toUpperCase();
     player2 = prompt("Player 2: Enter your Symbol...").toUpperCase();
 
+    // Re-prompts players if symbol is > 1 character, an empty space, or same as another player.
     while (player1.length > 1 || player1 === '' || player1 === ' ' || player1 === player2){
         player1 = prompt("Please enter a SINGLE character for Player 1: ").toUpperCase();
     }
-
     while (player2.length > 1 || player2 === '' || player2 === ' ' || player1 === player2){
         player2 = prompt("Please enter a SINGLE character for Player 2: ").toUpperCase();
     }
-
+    // Displays player labels
     document.querySelector('#p1').style.display = 'block';
     document.querySelector('#p2').style.display = 'block';
 
+    // Targets player labels, sets player name & symbol, and sets class for styling.
     let p1Label = document.querySelector('#p1');
     p1Label.textContent = `PLAYER 1: ${player1}`;
     p1Label.className = 'isTurn';
@@ -96,17 +103,13 @@ const startGame = () => {
     p2Label.textContent = `PLAYER 2: ${player2}`; 
     p2Label.className = 'waitingTurn';
 
+    // Creates a 2D array for win conditions. Each nested array represents a way in which a player can win.
     winningConditions = [
-        /* [0][1][2]
-           [3][4][5]
-           [6][7][8] */
-        // ROWS
-        ['','',''], ['','',''], ['','',''],
-        // COLUMNS
-        ['','',''], ['','',''], ['','',''],
-        //DIAGONALS
-        ['','',''], ['','','']
+        ['','',''], ['','',''], ['','',''], // ROWS (0, 1, 2)
+        ['','',''], ['','',''], ['','',''], // COLUMNS (3, 4, 5)
+        ['','',''], ['','',''] //DIAGONALS (6, 7)
     ]
+    // Sets Player 1 as current player (first turn)
     currentPlayer = player1
     
     // BOX 0
@@ -205,7 +208,4 @@ const startGame = () => {
         checkForWin();
         changeTurn();
     }, {once: true});
-
 }
-
-
