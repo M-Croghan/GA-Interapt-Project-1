@@ -22,6 +22,7 @@ header {
 }
 
 #game-window {
+    border: 2px solid #fff;
     grid-column: 2 / span 3;
     grid-row: 2;
     margin: 10px;
@@ -43,8 +44,8 @@ footer {
 .box {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    border: 5px solid #fff;
     padding-top: 25px;
-    border: 2px solid #fff;
     height: 128px;
     font-size: 50px;
     font-size: 80px;
@@ -85,6 +86,7 @@ footer {
 
 
 button {
+    font-size: 100px;
     background-color: rgb(62, 4, 73);
     color: white;
     -webkit-animation: glowing-text 1s ease-in-out infinite alternate;
@@ -119,3 +121,5 @@ font-size: 40px;
 box-shadow: 0 1 2 0;
 background-color: grey;
 }
+
+
