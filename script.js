@@ -3,6 +3,9 @@ let player1;
 let player2;
 let winningConditions;
 let currentPlayer;
+let soundPlay = new Audio('sound/laser.mp3');
+let soundWin = new Audio('sound/macho.mp3');
+let soundDraw = new Audio('sound/draw.mp3');
 
 // Hide HTML elements
 document.querySelector('#p1').style.display = 'none';
@@ -29,6 +32,7 @@ const changeTurn = () => {
     }
 }
 
+// Changes UI & offers replay button
 const replayOption = () => {
     document.querySelector('#p1').style.display = 'none';
     document.querySelector('#p2').style.display = 'none';
@@ -48,7 +52,8 @@ const checkForWin = () => {
     let findDraw = 0;
     winningConditions.forEach(elem => {
         if (endGame(elem) && !elem.includes('')){
-            document.querySelector('footer h1').textContent = `${elem[0]} WINS!`
+            soundWin.play();
+            document.querySelector('footer h1').textContent = `${elem[0]} WINS!`;
             document.querySelector('main').addEventListener('click', function(event) {
                 event.stopImmediatePropagation();
             }, true);
@@ -61,6 +66,7 @@ const checkForWin = () => {
         }
     }
     if (findDraw === 8) {
+        soundDraw.play();
         document.querySelector('footer h1').textContent = 'DRAW!'
         replayOption();
     }
@@ -68,6 +74,7 @@ const checkForWin = () => {
 
 // Game initialization - Validates player symbol inputs & makes game board interactive.
 const startGame = () => {
+    
     player1 = prompt("Player 1: Enter your Symbol...").toUpperCase();
     player2 = prompt("Player 2: Enter your Symbol...").toUpperCase();
 
@@ -104,6 +111,7 @@ const startGame = () => {
     
     // BOX 0
     document.querySelector("#row1-col1").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row1-col1").textContent = currentPlayer;
         winningConditions[0][0] = currentPlayer;
         winningConditions[3][0] = currentPlayer;
@@ -114,6 +122,7 @@ const startGame = () => {
 
     // BOX 1
     document.querySelector("#row1-col2").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row1-col2").textContent = currentPlayer;
         winningConditions[0][1] = currentPlayer;
         winningConditions[4][0] = currentPlayer;
@@ -124,6 +133,7 @@ const startGame = () => {
 
     // BOX 2
     document.querySelector("#row1-col3").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row1-col3").textContent = currentPlayer;
         winningConditions[0][2] = currentPlayer;
         winningConditions[5][0] = currentPlayer;
@@ -134,6 +144,7 @@ const startGame = () => {
 
     // BOX 3
     document.querySelector("#row2-col1").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row2-col1").textContent = currentPlayer;
         winningConditions[1][0] = currentPlayer;
         winningConditions[3][1] = currentPlayer;
@@ -143,6 +154,7 @@ const startGame = () => {
 
     // BOX 4
     document.querySelector("#row2-col2").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row2-col2").textContent = currentPlayer;
         winningConditions[1][1] = currentPlayer;
         winningConditions[4][1] = currentPlayer;
@@ -154,6 +166,7 @@ const startGame = () => {
 
     // BOX 5
     document.querySelector("#row2-col3").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row2-col3").textContent = currentPlayer;
         winningConditions[1][2] = currentPlayer;
         winningConditions[5][1] = currentPlayer;
@@ -163,6 +176,7 @@ const startGame = () => {
 
     // BOX 6
     document.querySelector("#row3-col1").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row3-col1").textContent = currentPlayer;
         winningConditions[2][0] = currentPlayer;
         winningConditions[3][2] = currentPlayer;
@@ -173,6 +187,7 @@ const startGame = () => {
 
     // BOX 7
     document.querySelector("#row3-col2").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row3-col2").textContent = currentPlayer;
         winningConditions[2][1] = currentPlayer;
         winningConditions[4][2] = currentPlayer;
@@ -182,6 +197,7 @@ const startGame = () => {
 
     // BOX 8
     document.querySelector("#row3-col3").addEventListener('click', () => {
+        soundPlay.play();
         document.querySelector("#row3-col3").textContent = currentPlayer;
         winningConditions[2][2] = currentPlayer;
         winningConditions[5][2] = currentPlayer;
