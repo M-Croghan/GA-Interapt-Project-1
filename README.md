@@ -84,7 +84,7 @@ Allows a user to play online with another person OR against a computer:
 ## :warning: ISSUES & SOLUTIONS :bulb:
 ### Resolved :thumbsup:
 1. *Building the Layout*
-    - If there were to be a single issue chosen as the most significant problem during this project it would have been 
+    - A major issue chosen as the most significant problem during this project it would have been 
     organizing the layout of the game through HTML & CSS. Typically, these aspects of web development are seen as
     relatively straight forward, however this project reminded me that beautiful front end work is very much an artform.
     In an effort to steer myself away from blindly moving through the project by way of _'trial & error'_, I used some simple
@@ -104,7 +104,12 @@ Allows a user to play online with another person OR against a computer:
     is that the code becomes very repetitive (thus violating the DRY principle). It is important to point out that each section is slightly different 
     due to targeting a distinct element and adding an event listener which inputs values to specific indices of the 2D array. Each block of code is
     documented accordingly and eliminates some repetition by calling other functions for various tasks. The end result yields a functional tic-tac-toe game
-    but one that I feel could have cleaner code in a future enhancement.
+    but one that I feel could have cleaner code in a future enhancement.  
+2. *Event Propagation & Anonymous Functions*
+    - During my time reworking my code, I recognized not taking an object oriented approach made things a bit more difficult than necessary. Had I elected to
+      make a player & board class, it would have been much easier to store & persist game information (i.e. past score information). By adding event listeners
+      with anonymous functions, it became difficult remove functionality when certain conditions were met. On top of all of this, it would have made for an easier
+      time choosing the right data structure to store player moves.
 
 
 ## :video_game: GAME INSTALLATION & INSTRUCTIONS :video_game:
