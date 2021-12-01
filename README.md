@@ -113,7 +113,7 @@ Allows a user to play online with another person OR against a computer:
 
 
 ## :video_game: GAME INSTALLATION & INSTRUCTIONS :video_game:
-0. Users navigate to github pages url: () using their preferred web browser (internet connectivity required).
+0. Users navigate to github pages url: https://m-croghan.github.io/GA-Interapt-Project-1/ using their preferred web browser (internet connectivity required).
 1. Users are greeted by a blank game board (composed of 9 individual boxes).
 2. Clicking on the large 'Start Game' button on the left hand side will initiate a new game.
 3. Two prompts will appear, requesting the player's chosen symbols.
