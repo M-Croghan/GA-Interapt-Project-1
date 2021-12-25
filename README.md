@@ -1,8 +1,12 @@
-# PROJECT 1: TIC-TAC-TOE - OVERVIEW
+# <img src="img\tech.png" alt="html/css/js logo" width="75"/> <span style="color:lightblue">PROJECT 1: TIC-TAC-TOE - OVERVIEW</span> <img src="img\tech.png" alt="html/css/js logo" width="75"/>
+
 The goal of this project was to implement some of the foundational web development technologies
 in the creation of a Tic-Tac-Toe game. It allows for two players to participate in a game of Tic-Tac-Toe
 via a web browser.
-![Game UI](/img/finalUI.png "Finished Main Game Window")
+<p align="center">
+<img src="img\finalUI.png" alt="game window" width="800"/>
+</p>
+
 
 # Table of Contents
 1. [Development Approach](https://github.com/M-Croghan/GA-Interapt-Project-1#mag_right-development-approach-mag)
@@ -16,7 +20,10 @@ via a web browser.
 The approach taken with this project involved short development cycles comprised of 5 phases.
 The process began by creating a high level view of the application's user interface. Creation of a simple wireframe laid the ground work for the overall structure of the game.
 
-![Wireframe of UI](/wireframes/p1Wireframe.png "Main Game Window Wireframe")
+<p align="center">
+<img src="wireframes\p1Wireframe.png" alt="game window" width="600"/>
+</p>
+
 
 ### **:one: PHASE ONE - HTML5 SKELETON**  
 This first phase was the shortest in development as it only involved laying down the basic HTML elements required by the game. Many other elements are created, manipulated, or removed through the use of JavaScript. Phase one required a general framework on which CSS could be applied to organize the structure.
